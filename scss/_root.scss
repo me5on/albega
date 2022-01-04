@@ -1,0 +1,79 @@
+@use 'sass:math';
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+
+@use './colors' as *;
+@use './fonts' as *;
+@use './steps' as *;
+@use './utils' as *;
+
+
+:root {
+    --c-norm-bg: #{$norm--bg};
+    --c-norm-fg: #{$norm--fg};
+    --c-acnt-bg: #{$acnt--bg};
+    --c-acnt-fg: #{$acnt--fg};
+    --c-alrt-bg: #{$alrt--bg};
+    --c-alrt-fg: #{$alrt--fg};
+}
+
+
+@each $key, $val in $colors {
+
+    :root {
+        $spread--a: spread(0, 1, 2);
+        @for $i from 1 through length($spread--a) {
+            --c-#{$key}--a-#{step($i)}: #{color.change($val, $alpha: nth($spread--a,$i))};
+        }
+
+        $spread--l: spread(000%, 100%);
+        @for $i from 1 through length($spread--l) {
+            --c-#{$key}--l-#{step($i)}: #{color.change($val, $lightness: nth($spread--l,$i))};
+        }
+
+        $spread--s: spread(000%, 100%);
+        @for $i from 1 through length($spread--s) {
+            --c-#{$key}--s-#{step($i)}: #{color.change($val, $saturation: nth($spread--s,$i))};
+        }
+    }
+
+}
+
+
+:root {
+    @for $i from 0 to $steps--length {
+        --brad--px-#{step($i + 1)}: #{math.pow(2,$i) * 1px};
+    }
+
+    $spread--pp: spread(00%, 50%);
+    @for $i from 1 through length($spread--pp) {
+        --brad--pp-#{step($i)}: #{nth($spread--pp,$i)};
+    }
+}
+
+
+:root {
+    @for $i from 0 to $steps--length {
+        --sz--px-#{step($i + 1)}: #{math.pow(2, $i) * 1px};
+    }
+
+    $spread--pp: spread(000%, 100%);
+    @for $i from 1 through length($spread--pp) {
+        --sz--pp-#{step($i)}: #{nth($spread--pp,$i)};
+    }
+
+    @for $i from 1 through $steps--length {
+        --sz--em-#{step($i)}: #{math.pow(2, $i - 1) * 1em};
+    }
+
+    @for $i from 1 through $steps--length {
+        --sz--rem-#{step($i)}: #{math.pow(2, $i - 1) * 1rem};
+    }
+}
+
+
+:root {
+    --font--norm: #{$font--norm};
+    --font--mono: #{$font--mono};
+}

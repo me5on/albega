@@ -1,0 +1,56 @@
+@use 'sass:math';
+@use 'sass:list';
+@use 'sass:map';
+
+@use './steps' as *;
+
+
+@function round($value,$precision:2) {
+    $offset: math.pow(10, $precision);
+    @return math.div(math.round($value * $offset), $offset);
+}
+
+
+@function div($a,$b,$precision:0) {
+    @return round(math.div($a, $b), $precision);
+}
+
+
+@function mzip($keys,$vals) {
+    $l: math.min(length($keys), length($vals));
+    $m: ();
+    @for $i from 0 to $l {
+        $k: list.nth($i, $keys);
+        $v: list.nth($i, $vals);
+        $m: map.set($m, $k, $v);
+    }
+    @return $m;
+}
+
+
+@function spread($min,$max,$precision:0) {
+
+    $mn: round($min, $precision);
+    $mx: round($max, $precision);
+    $md: div($mx - $mn, 2, $precision);
+    $step: div($mx - $mn, $steps--length, $precision);
+
+    @return (
+        $mn,
+        $mn + $step,
+        $mn + 2 * $step,
+        $md,
+        $mx - 2 * $step,
+        $mx - $step,
+        $mx
+    );
+}
+
+
+@mixin assign($map) {
+    @if type-of($map) == map {
+        @each $key, $val in $map {
+            #{inspect($key)}: #{inspect($val)};
+        }
+    }
+}

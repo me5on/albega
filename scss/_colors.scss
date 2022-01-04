@@ -1,0 +1,16 @@
+$norm--bg: #222121 !default;
+$norm--fg: #cccccf !default;
+$acnt--bg: #365fb3 !default;
+$acnt--fg: #cccccc !default;
+$alrt--bg: #bb2222 !default;
+$alrt--fg: #ffffff !default;
+
+
+$colors:   (
+               norm-bg: $norm--bg,
+               norm-fg: $norm--fg,
+               acnt-bg: $acnt--bg,
+               acnt-fg: $acnt--fg,
+               alrt-bg: $alrt--bg,
+               alrt-fg: $alrt--fg,
+           )

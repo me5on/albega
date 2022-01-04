@@ -4,11 +4,13 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npm run esl:ofix
+npm run run:bld
 npm test
 npx dv bump
 
 npm i --package-lock-only
 
+git add css/
 git add package-lock.json
 git add package.json
 git add ver.json

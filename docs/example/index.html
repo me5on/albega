@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Example</title>
+        <link href="./style.css" rel="stylesheet">
+        <style>
+            * {
+                border-radius: var(--brad--px-sm);
+            }
+
+            body {
+                background:  var(--c-norm-bg);
+                font-family: var(--font--mono);
+                font-size:   var(--sz--px-lg);
+                margin:      0;
+                padding:     0;
+            }
+
+            #grid {
+                display:         grid;
+                grid-template:   auto / repeat(3, 1fr);
+                gap:             var(--sz--rem-mn);
+                padding:         var(--sz--rem-mn);
+                margin:          0;
+            }
+
+            #grid > * {
+                white-space: pre-line;
+                min-height:  var(--sz--em-md);
+                min-width:   var(--sz--em-md);
+                padding:     var(--sz--px-md);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="grid">
+            <div>
+                color: var(--c-norm-bg);
+                background: var(--c-norm-fg );
+
+            </div>
+            <div>
+                color: var(--c-acnt-fg);
+                background: var(--c-acnt-bg);
+
+            </div>
+            <div>
+                color: var(--c-alrt-fg);
+                background: var(--c-alrt-bg);
+
+            </div>
+            <div>
+                border-radius: var(--brad--pp-md);
+                background: var(--c-acnt-fg--s-xs);
+
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+    <script>
+        (
+            () => {
+                const $els = [...document.querySelectorAll('#grid > *')];
+                for (const $el of $els) {
+                    console.log($el.textContent);
+                    $el.style = String($el.textContent).trim();
+                }
+            }
+        )();
+    </script>
+</html>
