@@ -11,6 +11,10 @@ const ROOT = resolve(
 const C = Object.freeze({
 
     protocol: /^file:\/\//u,
+    newline:  /(?<!\n)\n/gu,
+    space:    ' ',
+    empty:    '',
+
 
     src: Object.freeze({
         dir:  join(ROOT, './scss'),

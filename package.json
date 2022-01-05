@@ -1,8 +1,9 @@
 {
-  "name": "@me5on/stylib",
-  "version": "0.0.0+5",
+  "name": "@me5on/albega",
+  "version": "0.0.0+7",
   "description": "",
   "type": "module",
+  "main": "./src/index.js",
   "repository": "",
   "author": {
     "name": "azder",

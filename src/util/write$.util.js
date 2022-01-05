@@ -1,14 +1,17 @@
 import {writeFile as w$} from 'node:fs/promises';
+import COLOR from '../etc/color.const.js';
 
 
-const {log} = console;
+const {done, rst, info} = COLOR;
+const log = process.stdout.write.bind(process.stdout);
 
 
 const write$ = (
 
     async ({file, data}) => {
-        log('writing ', file, '...');
+        log(`${info}WRITING${rst} ${file}... `);
         await w$(file, data);
+        log(`${done}DONE${rst}\n`);
     }
 
 );

@@ -1,31 +1,30 @@
-// eslint-disable-next-line no-console
-
 import {rm as rm$} from 'node:fs/promises';
-import {join} from 'node:path';
 import sass from 'sass';
+import COLOR from './etc/color.const.js';
 import C from './etc/general.const.js';
 import exists$ from './util/exists$.util.js';
+import file from './util/file.util.js';
 import write$ from './util/write$.util.js';
 
 
+const {rst, dim} = COLOR;
 const {log, error} = console;
 
 
 (async () => {
 
-    const {css: data} = sass.compile(
-        join(C.src.dir, C.src.file) + C.src.ext,
-        {style: 'expanded'},
-    );
+    const {css: data} = sass.compile(file(C.src), {style: 'expanded'});
 
-    log(data);
+    log(dim);
+    log(data.replaceAll(C.newline, C.empty).replaceAll(C.space, C.empty));
+    log(rst);
 
-    const file = join(C.doc.dir, C.doc.file) + C.doc.ext;
-    if (await exists$(file)) {
-        await rm$(file, {recursive: true, force: true});
+    const doc = file(C.doc);
+    if (await exists$(doc)) {
+        await rm$(doc, {recursive: true, force: true});
     }
 
-    await write$({file, data});
+    await write$({file: doc, data});
 
 })().catch(e => {
     error(e);

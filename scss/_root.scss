@@ -9,6 +9,19 @@
 @use './utils' as *;
 
 
+$-colors: (
+              gray-al: $gray--al,
+              gray-be: $gray--be,
+              norm-al: $norm--al,
+              norm-be: $norm--be,
+              norm-ga: $norm--ga,
+              main-al: $main--al,
+              main-be: $main--be,
+              acnt-al: $acnt--al,
+              acnt-be: $acnt--be,
+          );
+
+
 :root {
     --c-gray-al: #{$gray--al};
     --c-gray-be: #{$gray--be};
@@ -30,26 +43,13 @@
 
     --c-warn-al: #{$warn--al};
     --c-warn-be: #{$warn--be};
-    
+
     --c-alrt-al: #{$alrt--al};
     --c-alrt-be: #{$alrt--be};
 }
 
 
-$colors: (
-             gray-al: $gray--al,
-             gray-be: $gray--be,
-             norm-al: $norm--al,
-             norm-be: $norm--be,
-             norm-ga: $norm--ga,
-             main-al: $main--al,
-             main-be: $main--be,
-             acnt-al: $acnt--al,
-             acnt-be: $acnt--be,
-         );
-
-
-@each $key, $val in $colors {
+@each $key, $val in $-colors {
 
     :root {
         $spread--a: spread(0, 1, 2);
