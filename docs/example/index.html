@@ -6,11 +6,12 @@
         <link href="./style.css" rel="stylesheet">
         <style>
             * {
-                border-radius: var(--brad--px-sm);
+                border-radius: var(--br--px-sm);
+                box-sizing:    border-box;
             }
 
             body {
-                background:  var(--c-norm-bg);
+                background:  var(--c-gray-be--l-xs);
                 font-family: var(--font--mono);
                 font-size:   var(--sz--px-lg);
                 margin:      0;
@@ -30,38 +31,48 @@
                 min-height:  var(--sz--em-md);
                 min-width:   var(--sz--em-md);
                 padding:     var(--sz--px-md);
+                border:      var(--sz--px-md) solid transparent;
             }
         </style>
     </head>
     <body>
         <div id="grid">
             <div>
-                color: var(--c-norm-bg);
-                background: var(--c-norm-fg );
+                color: var(--c-norm-al);
+                background: var(--c-norm-be);
+                border-color: var(--c-norm-ga);
 
             </div>
             <div>
-                color: var(--c-acnt-fg);
-                background: var(--c-acnt-bg);
+                color: var(--c-main-be);
+                background: var(--c-main-al);
+                border: var(--sz--px-md) solid var(--c-main-ga);
 
             </div>
             <div>
-                color: var(--c-alrt-fg);
-                background: var(--c-alrt-bg);
+                color: var(--c-acnt-be);
+                background: var(--c-acnt-al);
+                border: var(--sz--px-md) solid var(--c-acnt-ga);
 
             </div>
             <div>
-                border-radius: var(--brad--pp-md);
-                background: var(--c-acnt-fg--s-xs);
+                border-radius: var(--br--pp-sm);
+                color: var(--c-done-al);
+                background: var(--c-gray-al--a-xl);
 
             </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>
+                border-radius: var(--br--pp-sm);
+                color: var(--c-warn-al);
+                background: var(--c-gray-al--a-lg);
+
+            </div>
+            <div>
+                border-radius: var(--br--pp-sm);
+                color: var(--c-alrt-al);
+                background: var(--c-gray-al--a-md);
+
+            </div>
         </div>
     </body>
     <script>

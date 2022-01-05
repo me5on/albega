@@ -1,16 +1,25 @@
-$norm--bg: #222121 !default;
-$norm--fg: #cccccf !default;
-$acnt--bg: #365fb3 !default;
-$acnt--fg: #cccccc !default;
-$alrt--bg: #bb2222 !default;
-$alrt--fg: #ffffff !default;
+$gray--al: #000000;
+$gray--be: #ffffff;
 
 
-$colors:   (
-               norm-bg: $norm--bg,
-               norm-fg: $norm--fg,
-               acnt-bg: $acnt--bg,
-               acnt-fg: $acnt--fg,
-               alrt-bg: $alrt--bg,
-               alrt-fg: $alrt--fg,
-           )
+$norm--al: #222121 !default;
+$norm--be: #cccccf !default;
+$norm--ga: #999999 !default;
+
+
+$main--al: #365fb3 !default;
+$main--be: #cccccc !default;
+$main--ga: #999999 !default;
+
+
+$acnt--al: #33998f !default;
+$acnt--be: #000000 !default;
+$acnt--ga: #999999 !default;
+
+
+$done--al: #33cc99 !default;
+$done--be: #ffffff !default;
+$warn--al: #ff8000 !default;
+$warn--be: #ffffff !default;
+$alrt--al: #ff2b00 !default;
+$alrt--be: #ffffff !default;

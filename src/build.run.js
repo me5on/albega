@@ -7,16 +7,23 @@ import recreate$ from './util/recreate$.util.js';
 import write$ from './util/write$.util.js';
 
 
+const fileOf = (
+
+    ({dir, ext, file}) => join(dir, file) + ext
+
+);
+
+
 (async () => {
 
     await recreate$(C.dst.dir);
 
     const src = join(C.src.dir, C.src.file) + C.src.ext;
 
-    const {css: min} = sass.compile(src, {sourceMap: true, style: 'compressed'});
+    const {css: min} = sass.compile(src, {style: 'compressed', sourceMap: true});
     const {css: max} = sass.compile(src, {style: 'expanded'});
 
-    await write$({file: join(C.dst.dir, C.dst.file) + C.dst.ext, data: min});
-    await write$({file: join(C.doc.dir, C.doc.file) + C.doc.ext, data: max});
+    await write$({file: fileOf(C.dst), data: min});
+    await write$({file: fileOf(C.doc), data: max});
 
 })();

@@ -1,9 +1,8 @@
 {
   "name": "@me5on/stylib",
-  "version": "0.0.0+4",
+  "version": "0.0.0+5",
   "description": "",
   "type": "module",
-  "main": "./src/index.js",
   "repository": "",
   "author": {
     "name": "azder",
@@ -30,9 +29,9 @@
     "run:doc": "npx es-dev-server --watch --node-resolve --root-dir ./docs/example",
     "run:dev": "nodemon src/dev.run.js --config nodemon.config.json",
     "run:bld": "node src/build.run.js",
-    "test": "npm run jst:once",
     "prepare": "husky install",
-    "start": "npm run jst:wtch"
+    "test": "npm run jst:once",
+    "start": "npm run run:bld"
   },
   "devDependencies": {
     "@jest/globals": "^27.4.4",

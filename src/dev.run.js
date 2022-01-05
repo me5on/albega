@@ -22,7 +22,7 @@ const {log, error} = console;
 
     const file = join(C.doc.dir, C.doc.file) + C.doc.ext;
     if (await exists$(file)) {
-        await rm$(file, {force: true});
+        await rm$(file, {recursive: true, force: true});
     }
 
     await write$({file, data});

@@ -10,13 +10,43 @@
 
 
 :root {
-    --c-norm-bg: #{$norm--bg};
-    --c-norm-fg: #{$norm--fg};
-    --c-acnt-bg: #{$acnt--bg};
-    --c-acnt-fg: #{$acnt--fg};
-    --c-alrt-bg: #{$alrt--bg};
-    --c-alrt-fg: #{$alrt--fg};
+    --c-gray-al: #{$gray--al};
+    --c-gray-be: #{$gray--be};
+
+    --c-norm-al: #{$norm--al};
+    --c-norm-be: #{$norm--be};
+    --c-norm-ga: #{$norm--ga};
+
+    --c-main-al: #{$main--al};
+    --c-main-be: #{$main--be};
+    --c-main-ga: #{$main--ga};
+
+    --c-acnt-al: #{$acnt--al};
+    --c-acnt-be: #{$acnt--be};
+    --c-acnt-ga: #{$acnt--ga};
+
+    --c-done-al: #{$done--al};
+    --c-done-be: #{$done--be};
+
+    --c-warn-al: #{$warn--al};
+    --c-warn-be: #{$warn--be};
+    
+    --c-alrt-al: #{$alrt--al};
+    --c-alrt-be: #{$alrt--be};
 }
+
+
+$colors: (
+             gray-al: $gray--al,
+             gray-be: $gray--be,
+             norm-al: $norm--al,
+             norm-be: $norm--be,
+             norm-ga: $norm--ga,
+             main-al: $main--al,
+             main-be: $main--be,
+             acnt-al: $acnt--al,
+             acnt-be: $acnt--be,
+         );
 
 
 @each $key, $val in $colors {
@@ -43,12 +73,12 @@
 
 :root {
     @for $i from 0 to $steps--length {
-        --brad--px-#{step($i + 1)}: #{math.pow(2,$i) * 1px};
+        --br--px-#{step($i + 1)}: #{math.pow(2,$i) * 1px};
     }
 
     $spread--pp: spread(00%, 50%);
     @for $i from 1 through length($spread--pp) {
-        --brad--pp-#{step($i)}: #{nth($spread--pp,$i)};
+        --br--pp-#{step($i)}: #{nth($spread--pp,$i)};
     }
 }
 
