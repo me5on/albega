@@ -3,26 +3,20 @@
 @use 'sass:list';
 @use 'sass:map';
 
-@use './colors' as *;
-@use './fonts' as *;
-@use './steps' as *;
-@use './utils' as *;
+@use '../internal/fonts' as *;
+@use '../internal/steps' as *;
+
+@use '../forward/colors' as *;
+@use '../forward/utils' as *;
 
 
-$-colors: (
-              gray-al: $gray--al,
-              gray-be: $gray--be,
-              norm-al: $norm--al,
-              norm-be: $norm--be,
-              norm-ga: $norm--ga,
-              main-al: $main--al,
-              main-be: $main--be,
-              acnt-al: $acnt--al,
-              acnt-be: $acnt--be,
-          );
+$-theme:   (
+               acnt-ga: $acnt--ga, acnt-be: $acnt--be, acnt-al: $acnt--al,
+               main-ga: $main--ga, main-be: $main--be, main-al: $main--al,
+               norm-ga: $norm--ga, norm-be: $norm--be, norm-al: $norm--al,
+           );
 
-
-@each $key, $val in $-colors {
+@each $key, $val in $-theme {
 
     :root {
         $spread--a: spread(0, 1, 2);
@@ -38,6 +32,25 @@ $-colors: (
         $spread--s: spread(000%, 100%);
         @for $i from 1 through length($spread--s) {
             --c-#{$key}--s-#{step($i)}: #{color.change($val, $saturation: nth($spread--s,$i))};
+        }
+    }
+
+}
+
+
+$-utility: (gray-be: $gray--be, gray-al: $gray--al);
+
+@each $key, $val in $-utility {
+
+    :root {
+        $spread--a: spread(0, 1, 2);
+        @for $i from 1 through length($spread--a) {
+            --c-#{$key}--a-#{step($i)}: #{color.change($val, $alpha: nth($spread--a,$i))};
+        }
+
+        $spread--l: spread(000%, 100%);
+        @for $i from 1 through length($spread--l) {
+            --c-#{$key}--l-#{step($i)}: #{color.change($val, $lightness: nth($spread--l,$i))};
         }
     }
 

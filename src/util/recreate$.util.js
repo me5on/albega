@@ -1,4 +1,5 @@
 import {mkdir as md$, rm as rm$} from 'node:fs/promises';
+import C from '../etc/general.const.js';
 import exists$ from './exists$.util.js';
 
 
@@ -7,11 +8,11 @@ const recreate$ = (
     async $ => {
 
         if (await exists$($)) {
-            await rm$($, {recursive: true, force: true});
+            await rm$($, C.rf);
         }
 
-        await md$($, {recursive: true});
-        
+        await md$($, C.rf);
+
     }
 
 );

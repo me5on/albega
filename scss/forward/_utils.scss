@@ -1,8 +1,7 @@
 @use 'sass:math';
-@use 'sass:list';
 @use 'sass:map';
 
-@use './steps' as *;
+@use '../internal/steps' as *;
 
 
 @function round($value,$precision:2) {
@@ -20,8 +19,8 @@
     $l: math.min(length($keys), length($vals));
     $m: ();
     @for $i from 0 to $l {
-        $k: list.nth($i, $keys);
-        $v: list.nth($i, $vals);
+        $k: nth($i, $keys);
+        $v: nth($i, $vals);
         $m: map.set($m, $k, $v);
     }
     @return $m;
@@ -53,4 +52,14 @@
             #{inspect($key)}: #{inspect($val)};
         }
     }
+}
+
+
+@mixin albega--square($sz,$min:$sz,$max:$sz) {
+    width:      $sz;
+    height:     $sz;
+    min-width:  $min;
+    min-height: $min;
+    max-width:  $max;
+    max-height: $max;
 }

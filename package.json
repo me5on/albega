@@ -1,10 +1,10 @@
 {
   "name": "@me5on/albega",
-  "version": "0.0.0+9",
+  "version": "0.0.1+16",
   "description": "",
   "type": "module",
   "main": "./src/index.js",
-  "repository": "",
+  "repository": "https://github.com/me5on/albega",
   "author": {
     "name": "azder",
     "email": "azhder@gmail.com"

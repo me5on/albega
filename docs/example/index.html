@@ -76,14 +76,11 @@
         </div>
     </body>
     <script>
-        (
-            () => {
-                const $els = [...document.querySelectorAll('#grid > *')];
-                for (const $el of $els) {
-                    console.log($el.textContent);
-                    $el.style = String($el.textContent).trim();
-                }
+        (() => {
+            const $els = [...document.querySelectorAll('#grid > *')];
+            for (const $el of $els) {
+                $el.style = String($el.textContent).trim();
             }
-        )();
+        })();
     </script>
 </html>

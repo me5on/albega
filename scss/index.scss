@@ -1,6 +1,4 @@
-// accessible to user
-@forward 'colors';
-@forward 'utils';
-
-// output to the css
-@use './root';
+@forward './forward/colors';
+@forward './forward/utils';
+@use './internal/root';
+@forward './forward/modifiers';

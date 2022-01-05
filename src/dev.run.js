@@ -1,9 +1,13 @@
+#!/usr/bin/env node
+
+
 import {rm as rm$} from 'node:fs/promises';
 import sass from 'sass';
 import COLOR from './etc/color.const.js';
 import C from './etc/general.const.js';
-import exists$ from './util/exists$.util.js';
+import link from './url/link.util.js';
 import file from './util/file.util.js';
+import replace from './util/replace.util.js';
 import write$ from './util/write$.util.js';
 
 
@@ -13,34 +17,26 @@ const {log, error} = console;
 
 (async () => {
 
-    const {css: data} = sass.compile(file(C.src), {style: 'expanded'});
+    const src = file(C.src);
+    const doc = file(C.doc);
+    const map = doc + C.map;
+
+    const {css, sourceMap: inf} = sass.compile(src, C.dev);
+    inf.sources = inf.sources.map(replace);
 
     log(dim);
-    log(data.replaceAll(C.newline, C.empty).replaceAll(C.space, C.empty));
+    log(css.replaceAll(C.newline, C.empty).replaceAll(C.space, C.empty));
+    log();
+    log(inf);
     log(rst);
 
-    const doc = file(C.doc);
-    if (await exists$(doc)) {
-        await rm$(doc, {recursive: true, force: true});
-    }
+    await rm$(map, C.rf);
+    await rm$(doc, C.rf);
 
-    await write$({file: doc, data});
+    await write$({file: map, data: JSON.stringify(inf)});
+    await write$({file: doc, data: css + link(map)});
 
 })().catch(e => {
     error(e);
     process.exit(1);
 });
-
-
-// log(sourceMap);
-// log(sourceMap.sources.map(
-//     $ => join(
-//         ROOT,
-//         D_BUILD,
-//         relative(
-//             C.main,
-//             $.replace(PROTOCOL, ''),
-//         ),
-//     ),
-// ));
-// log(css);

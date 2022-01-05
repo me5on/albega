@@ -10,11 +10,15 @@ const ROOT = resolve(
 
 const C = Object.freeze({
 
-    protocol: /^file:\/\//u,
-    newline:  /(?<!\n)\n/gu,
-    space:    ' ',
-    empty:    '',
+    root:     ROOT,
+    protocol: 'file://',
 
+    newline: /(?<!\n)\n/gu,
+    dot:     '.',
+    space:   ' ',
+    empty:   '',
+
+    map: '.map',
 
     src: Object.freeze({
         dir:  join(ROOT, './scss'),
@@ -33,6 +37,11 @@ const C = Object.freeze({
         file: 'style',
         ext:  '.css',
     }),
+
+    dev: Object.freeze({style: 'expanded', sourceMap: true}),
+    bld: Object.freeze({style: 'compressed', sourceMap: true}),
+
+    rf: Object.freeze({recursive: true, force: true}),
 
 });
 
