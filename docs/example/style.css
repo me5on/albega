@@ -1,24 +1,4 @@
 :root {
-  --c-gray-al: #000000;
-  --c-gray-be: #ffffff;
-  --c-norm-al: #222121;
-  --c-norm-be: #cccccf;
-  --c-norm-ga: #999999;
-  --c-main-al: #365fb3;
-  --c-main-be: #cccccc;
-  --c-main-ga: #999999;
-  --c-acnt-al: #33998f;
-  --c-acnt-be: #000000;
-  --c-acnt-ga: #999999;
-  --c-done-al: #33cc99;
-  --c-done-be: #ffffff;
-  --c-warn-al: #ff8000;
-  --c-warn-be: #ffffff;
-  --c-alrt-al: #ff2b00;
-  --c-alrt-be: #ffffff;
-}
-
-:root {
   --c-gray-al--a-mn: rgba(0, 0, 0, 0);
   --c-gray-al--a-xs: rgba(0, 0, 0, 0.14);
   --c-gray-al--a-sm: rgba(0, 0, 0, 0.28);
@@ -283,6 +263,29 @@
 }
 
 :root {
-  --font--norm: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  --font--mono: source-code-pro, Menlo, Monaco, Consolas, Courier, Courier New, monospace;
+  --font--norm: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;
+  --font--mono: source-code-pro, Menlo, Monaco, Consolas, Courier New, Courier, monospace;
+  --font--rome: Didot, Georgia, Times New Roman, Times, serif;
+  --font--curs: Bradley Hand, Brush Script MT, cursive;
+  --font--fant: Luminari, Papyrus, Copperplate, fantasy;
+}
+
+:root {
+  --c-norm-al: #222121;
+  --c-norm-be: #cccccf;
+  --c-norm-ga: #999999;
+  --c-main-al: #365fb3;
+  --c-main-be: #cccccc;
+  --c-main-ga: #999999;
+  --c-acnt-al: #33998f;
+  --c-acnt-be: #000000;
+  --c-acnt-ga: #999999;
+  --c-gray-al: #000000;
+  --c-gray-be: #ffffff;
+  --c-done-al: #33cc99;
+  --c-done-be: #ffffff;
+  --c-warn-al: #ff8000;
+  --c-warn-be: #ffffff;
+  --c-alrt-al: #ff2b00;
+  --c-alrt-be: #ffffff;
 }

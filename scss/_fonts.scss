@@ -1,15 +1,5 @@
-$font--norm: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-             'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-             sans-serif;
-
-
-$font--mono: source-code-pro, Menlo, Monaco, Consolas, Courier, 'Courier New',
-             monospace;
-
-$font--rome: Didot, Georgia, 'Times New Roman', serif; //American Typewriter (serif)
-
-
-$font--curs: 'Bradley Hand', cursive; //Comic Sans MS (cursive)
-
-
-$font--fant: Luminari, fantasy;
+$font--norm: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif;
+$font--mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;
+$font--rome: Didot, Georgia, 'Times New Roman', Times, serif;
+$font--curs: 'Bradley Hand', 'Brush Script MT', cursive;
+$font--fant: Luminari, Papyrus, Copperplate, fantasy;
