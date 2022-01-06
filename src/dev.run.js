@@ -34,7 +34,7 @@ const {log, error} = console;
     await rm$(doc, C.rf);
 
     await write$({file: map, data: JSON.stringify(inf)});
-    await write$({file: doc, data: css + link(map)});
+    await write$({file: doc, data: css + link(`./${C.doc.file}${C.map}`)});
 
 })().catch(e => {
     error(e);

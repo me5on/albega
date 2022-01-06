@@ -1,7 +1,23 @@
 @use 'sass:math';
 @use 'sass:map';
 
-@use './internal/steps' as *;
+$-values:       (
+                    'mn', // minimal
+                    'xs', // extra small
+                    'sm', // small
+                    'md', // medium
+                    'lg', // large
+                    'xl', // extra large
+                    'mx', // maximal
+                );
+
+
+$steps--length: length($-values);
+
+
+@function step($i) {
+    @return nth($-values, $i);
+}
 
 
 @function round($value,$precision:2) {

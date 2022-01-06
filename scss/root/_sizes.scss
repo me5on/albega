@@ -1,0 +1,36 @@
+@use 'sass:math';
+
+@use '../theme' as *;
+@use '../util' as *;
+
+
+:root {
+    @for $i from 0 to $steps--length {
+        --br--px-#{step($i + 1)}: #{math.pow(2,$i) * 1px};
+    }
+
+    $spread--pp: spread(00%, 50%);
+    @for $i from 1 through length($spread--pp) {
+        --br--pp-#{step($i)}: #{nth($spread--pp,$i)};
+    }
+}
+
+
+:root {
+    @for $i from 0 to $steps--length {
+        --sz--px-#{step($i + 1)}: #{math.pow(2, $i) * 1px};
+    }
+
+    $spread--pp: spread(000%, 100%);
+    @for $i from 1 through length($spread--pp) {
+        --sz--pp-#{step($i)}: #{nth($spread--pp,$i)};
+    }
+
+    @for $i from 1 through $steps--length {
+        --sz--em-#{step($i)}: #{math.pow(2, $i - 1) * 1em};
+    }
+
+    @for $i from 1 through $steps--length {
+        --sz--rem-#{step($i)}: #{math.pow(2, $i - 1) * 1rem};
+    }
+}

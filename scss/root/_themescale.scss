@@ -1,0 +1,59 @@
+@use 'sass:color';
+
+@use '../theme' as *;
+@use '../util' as *;
+
+
+$-theme: (
+             acnt-ga: $acnt--ga, acnt-be: $acnt--be, acnt-al: $acnt--al,
+             main-ga: $main--ga, main-be: $main--be, main-al: $main--al,
+             norm-ga: $norm--ga, norm-be: $norm--be, norm-al: $norm--al,
+         );
+
+@each $key, $val in $-theme {
+
+    :root {
+        $spread--a: spread(0, 1, 2);
+        @for $i from 1 through length($spread--a) {
+            --c-#{$key}--a-#{step($i)}: #{color.change($val, $alpha: nth($spread--a,$i))};
+        }
+
+        $spread--l: spread(000%, 100%);
+        @for $i from 1 through length($spread--l) {
+            --c-#{$key}--l-#{step($i)}: #{color.change($val, $lightness: nth($spread--l,$i))};
+        }
+
+        $spread--s: spread(000%, 100%);
+        @for $i from 1 through length($spread--s) {
+            --c-#{$key}--s-#{step($i)}: #{color.change($val, $saturation: nth($spread--s,$i))};
+        }
+    }
+
+}
+
+
+// keep at bottom so it will be topmost in browser dev tools
+:root {
+    // normal
+    --c-norm-al: #{$norm--al};
+    --c-norm-be: #{$norm--be};
+    --c-norm-ga: #{$norm--ga};
+    // main, primary
+    --c-main-al: #{$main--al};
+    --c-main-be: #{$main--be};
+    --c-main-ga: #{$main--ga};
+    // accent, secondary
+    --c-acnt-al: #{$acnt--al};
+    --c-acnt-be: #{$acnt--be};
+    --c-acnt-ga: #{$acnt--ga};
+    // grayscale utility
+    --c-gray-al: #{$gray--al};
+    --c-gray-be: #{$gray--be};
+    // notifications utility
+    --c-done-al: #{$done--al};
+    --c-done-be: #{$done--be};
+    --c-warn-al: #{$warn--al};
+    --c-warn-be: #{$warn--be};
+    --c-alrt-al: #{$alrt--al};
+    --c-alrt-be: #{$alrt--be};
+}

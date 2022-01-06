@@ -1,0 +1,24 @@
+@use 'sass:color';
+
+@use '../theme' as *;
+@use '../util' as *;
+
+
+$-utility: (gray-be: $gray--be, gray-al: $gray--al);
+
+
+@each $key, $val in $-utility {
+
+    :root {
+        $spread--a: spread(0, 1, 2);
+        @for $i from 1 through length($spread--a) {
+            --c-#{$key}--a-#{step($i)}: #{color.change($val, $alpha: nth($spread--a,$i))};
+        }
+
+        $spread--l: spread(000%, 100%);
+        @for $i from 1 through length($spread--l) {
+            --c-#{$key}--l-#{step($i)}: #{color.change($val, $lightness: nth($spread--l,$i))};
+        }
+    }
+
+}

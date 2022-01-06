@@ -1,6 +1,6 @@
 {
   "name": "@me5on/albega",
-  "version": "0.0.2+18",
+  "version": "0.0.2+19",
   "description": "",
   "type": "module",
   "main": "./src/index.js",
