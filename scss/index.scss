@@ -1,4 +1,4 @@
-@forward './forward/colors';
-@forward './forward/utils';
-@use './internal/root';
-@forward './forward/modifiers';
+@forward './theme';
+@forward './util';
+@forward './root';
+@forward './mod';

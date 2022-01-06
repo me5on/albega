@@ -1,0 +1,22 @@
+
+.albega-click {
+
+    &--auto {
+        pointer-events: auto;
+    }
+
+    &--none {
+        pointer-events: none;
+    }
+
+    &--enable {
+        cursor:         pointer;
+        pointer-events: auto;
+    }
+
+    &--disable {
+        cursor:         not-allowed;
+        pointer-events: none;
+    }
+
+}

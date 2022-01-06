@@ -324,8 +324,19 @@
   --c-alrt-be: #ffffff;
 }
 
-.albega-any--clickable {
+.albega-click--auto {
+  pointer-events: auto;
+}
+.albega-click--none {
+  pointer-events: none;
+}
+.albega-click--enable {
   cursor: pointer;
+  pointer-events: auto;
+}
+.albega-click--disable {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .albega-box--reset {

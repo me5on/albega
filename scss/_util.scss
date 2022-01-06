@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use 'sass:map';
 
-@use '../internal/steps' as *;
+@use './internal/steps' as *;
 
 
 @function round($value,$precision:2) {
@@ -12,18 +12,6 @@
 
 @function div($a,$b,$precision:0) {
     @return round(math.div($a, $b), $precision);
-}
-
-
-@function mzip($keys,$vals) {
-    $l: math.min(length($keys), length($vals));
-    $m: ();
-    @for $i from 0 to $l {
-        $k: nth($i, $keys);
-        $v: nth($i, $vals);
-        $m: map.set($m, $k, $v);
-    }
-    @return $m;
 }
 
 
@@ -46,20 +34,11 @@
 }
 
 
-@mixin assign($map) {
-    @if type-of($map) == map {
-        @each $key, $val in $map {
-            #{inspect($key)}: #{inspect($val)};
-        }
-    }
-}
-
-
-@mixin albega--square($sz,$min:$sz,$max:$sz) {
-    width:      $sz;
-    height:     $sz;
-    min-width:  $min;
-    min-height: $min;
-    max-width:  $max;
-    max-height: $max;
+@mixin square($sz,$min:null,$max:null) {
+    width:      #{$sz};
+    height:     #{$sz};
+    min-width:  #{$min};
+    min-height: #{$min};
+    max-width:  #{$max};
+    max-height: #{$max};
 }

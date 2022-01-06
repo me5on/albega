@@ -3,11 +3,12 @@
 @use 'sass:list';
 @use 'sass:map';
 
-@use '../internal/fonts' as *;
-@use '../internal/steps' as *;
+@use './internal/fonts' as *;
+@use './internal/steps' as *;
 
-@use '../forward/colors' as *;
-@use '../forward/utils' as *;
+@forward './theme';
+@use './theme' as *;
+@use './util' as *;
 
 
 $-theme:   (
