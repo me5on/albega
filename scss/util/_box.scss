@@ -1,0 +1,8 @@
+@mixin square( $sz, $min:null, $max:null ) {
+    width:      #{$sz};
+    height:     #{$sz};
+    min-width:  #{$min};
+    min-height: #{$min};
+    max-width:  #{$max};
+    max-height: #{$max};
+}

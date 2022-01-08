@@ -1,0 +1,37 @@
+@function shadow--box-outline(
+    $blur-size:null,
+    $blur-color:null,
+    $edge-color:null,
+    $edge-size:null,
+) {
+
+    @if not $edge-color or not $edge-size {
+        @return 0 0 #{$blur-size} #{$blur-color};
+    }
+
+    @return //
+        #{$edge-size} #{$edge-size} 0 #{$edge-color},
+        0 0 #{$blur-size} #{$blur-color};
+}
+
+
+@function shadow--txt-outline(
+    $offset-size: 0,
+    $blur-size,
+    $blur-color,
+) {
+
+    @if 0 == $offset-size {
+        @return 0 0 $blur-size $blur-color;
+    }
+
+    $pos: $offset-size;
+    $neg: calc(-1 * #{$offset-size});
+
+    @return //
+        #{$pos} #{$pos} $blur-size $blur-color,
+        #{$pos} #{$neg} $blur-size $blur-color,
+        #{$neg} #{$pos} $blur-size $blur-color,
+        #{$neg} #{$neg} $blur-size $blur-color;
+
+}

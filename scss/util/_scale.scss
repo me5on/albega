@@ -1,0 +1,22 @@
+@function scale--root (
+    $scale,
+    $step: 'mn'
+) {
+    @return calc(#{$scale} * var(--sz--rm-#{$step}));
+}
+
+
+@function scale--cont (
+    $scale,
+    $step: 'mn'
+) {
+    @return calc(#{$scale} * var(--sz--em-#{$step}));
+}
+
+
+@function scale--pixl (
+    $scale,
+    $step: 'mn'
+) {
+    @return calc(#{$scale} * var(--sz--px-#{$step}));
+}

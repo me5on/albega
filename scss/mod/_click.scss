@@ -9,14 +9,19 @@
         pointer-events: none;
     }
 
-    &--enable {
+    &--enabled {
         cursor:         pointer;
         pointer-events: auto;
     }
 
-    &--disable {
+    &--disabled {
         cursor:         not-allowed;
         pointer-events: none;
+    }
+
+    &--denied {
+        cursor:         not-allowed;
+        pointer-events: auto;
     }
 
 }

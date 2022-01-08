@@ -1,0 +1,21 @@
+@use './steps' as *;
+@use './numcraft' as *;
+
+
+@function spread($min,$max,$precision:0) {
+
+    $mn: round($min, $precision);
+    $mx: round($max, $precision);
+    $md: div($mx - $mn, 2, $precision);
+    $step: div($mx - $mn, $steps--length, $precision);
+
+    @return (
+        $mn,
+        $mn + $step,
+        $mn + 2 * $step,
+        $md,
+        $mx - 2 * $step,
+        $mx - $step,
+        $mx
+    );
+}

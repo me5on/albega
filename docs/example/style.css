@@ -284,50 +284,57 @@
 
 :root {
   --br--px-mn: 1px;
-  --br--px-xs: 2px;
-  --br--px-sm: 4px;
-  --br--px-md: 8px;
-  --br--px-lg: 16px;
-  --br--px-xl: 32px;
-  --br--px-mx: 64px;
   --br--pp-mn: 0%;
+  --br--px-xs: 2px;
   --br--pp-xs: 7%;
+  --br--px-sm: 4px;
   --br--pp-sm: 14%;
+  --br--px-md: 8px;
   --br--pp-md: 25%;
+  --br--px-lg: 16px;
   --br--pp-lg: 36%;
+  --br--px-xl: 32px;
   --br--pp-xl: 43%;
+  --br--px-mx: 64px;
   --br--pp-mx: 50%;
 }
 
 :root {
-  --sz--px-mn: 1px;
-  --sz--px-xs: 2px;
-  --sz--px-sm: 4px;
-  --sz--px-md: 8px;
-  --sz--px-lg: 16px;
-  --sz--px-xl: 32px;
-  --sz--px-mx: 64px;
   --sz--pp-mn: 0%;
-  --sz--pp-xs: 14%;
-  --sz--pp-sm: 28%;
-  --sz--pp-md: 50%;
-  --sz--pp-lg: 72%;
-  --sz--pp-xl: 86%;
-  --sz--pp-mx: 100%;
+  --sz--px-mn: 1px;
   --sz--em-mn: 1em;
+  --sz--rm-mn: 1rem;
+  --sz--ch-mn: 1ch;
+  --sz--pp-xs: 14%;
+  --sz--px-xs: 2px;
   --sz--em-xs: 2em;
+  --sz--rm-xs: 2rem;
+  --sz--ch-xs: 2ch;
+  --sz--pp-sm: 28%;
+  --sz--px-sm: 4px;
   --sz--em-sm: 4em;
+  --sz--rm-sm: 4rem;
+  --sz--ch-sm: 4ch;
+  --sz--pp-md: 50%;
+  --sz--px-md: 8px;
   --sz--em-md: 8em;
+  --sz--rm-md: 8rem;
+  --sz--ch-md: 8ch;
+  --sz--pp-lg: 72%;
+  --sz--px-lg: 16px;
   --sz--em-lg: 16em;
+  --sz--rm-lg: 16rem;
+  --sz--ch-lg: 16ch;
+  --sz--pp-xl: 86%;
+  --sz--px-xl: 32px;
   --sz--em-xl: 32em;
+  --sz--rm-xl: 32rem;
+  --sz--ch-xl: 32ch;
+  --sz--pp-mx: 100%;
+  --sz--px-mx: 64px;
   --sz--em-mx: 64em;
-  --sz--rem-mn: 1rem;
-  --sz--rem-xs: 2rem;
-  --sz--rem-sm: 4rem;
-  --sz--rem-md: 8rem;
-  --sz--rem-lg: 16rem;
-  --sz--rem-xl: 32rem;
-  --sz--rem-mx: 64rem;
+  --sz--rm-mx: 64rem;
+  --sz--ch-mx: 64ch;
 }
 
 .albega-click--auto {
@@ -336,13 +343,17 @@
 .albega-click--none {
   pointer-events: none;
 }
-.albega-click--enable {
+.albega-click--enabled {
   cursor: pointer;
   pointer-events: auto;
 }
-.albega-click--disable {
+.albega-click--disabled {
   cursor: not-allowed;
   pointer-events: none;
+}
+.albega-click--denied {
+  cursor: not-allowed;
+  pointer-events: auto;
 }
 
 .albega-box--reset {

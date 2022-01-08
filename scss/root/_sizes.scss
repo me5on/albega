@@ -1,36 +1,24 @@
 @use 'sass:math';
 
-@use '../theme' as *;
-@use '../util' as *;
+@use '../util' as U;
 
 
 :root {
-    @for $i from 0 to $steps--length {
-        --br--px-#{step($i + 1)}: #{math.pow(2,$i) * 1px};
-    }
-
-    $spread--pp: spread(00%, 50%);
-    @for $i from 1 through length($spread--pp) {
-        --br--pp-#{step($i)}: #{nth($spread--pp,$i)};
+    $pp: U.spread(00%, 50%);
+    @for $i from 1 through U.$steps--length {
+        --br--px-#{U.step($i)}: #{math.pow(2,$i - 1) * 1px};
+        --br--pp-#{U.step($i)}: #{nth($pp,$i)};
     }
 }
 
 
 :root {
-    @for $i from 0 to $steps--length {
-        --sz--px-#{step($i + 1)}: #{math.pow(2, $i) * 1px};
-    }
-
-    $spread--pp: spread(000%, 100%);
-    @for $i from 1 through length($spread--pp) {
-        --sz--pp-#{step($i)}: #{nth($spread--pp,$i)};
-    }
-
-    @for $i from 1 through $steps--length {
-        --sz--em-#{step($i)}: #{math.pow(2, $i - 1) * 1em};
-    }
-
-    @for $i from 1 through $steps--length {
-        --sz--rem-#{step($i)}: #{math.pow(2, $i - 1) * 1rem};
+    $pp: U.spread(000%, 100%);
+    @for $i from 1 through U.$steps--length {
+        --sz--pp-#{U.step($i)}: #{nth($pp,$i)};
+        --sz--px-#{U.step($i)}: #{math.pow(2, $i - 1) * 1px};
+        --sz--em-#{U.step($i)}: #{math.pow(2, $i - 1) * 1em};
+        --sz--rm-#{U.step($i)}: #{math.pow(2, $i - 1) * 1rem};
+        --sz--ch-#{U.step($i)}: #{math.pow(2, $i - 1) * 1ch};
     }
 }

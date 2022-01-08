@@ -1,0 +1,21 @@
+@use 'sass:math';
+
+
+@function round(
+    $value,
+    $precision:2,
+) {
+
+    $offset: math.pow(10, $precision);
+
+    @return math.div(math.round($value * $offset), $offset);
+}
+
+
+@function div(
+    $a,
+    $b,
+    $precision:0,
+) {
+    @return round(math.div($a, $b), $precision);
+}
