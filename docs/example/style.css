@@ -276,10 +276,13 @@
   --c-gray-be: #ffffff;
   --c-done-al: #33cc99;
   --c-done-be: #ffffff;
+  --c-done-ga: #73998c;
   --c-warn-al: #ff8000;
   --c-warn-be: #ffffff;
+  --c-warn-ga: #998470;
   --c-alrt-al: #ff2b00;
   --c-alrt-be: #ffffff;
+  --c-alrt-ga: #997a70;
 }
 
 :root {

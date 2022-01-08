@@ -21,8 +21,8 @@
             #grid {
                 display:         grid;
                 grid-template:   auto / repeat(3, 1fr);
-                gap:             var(--sz--rem-mn);
-                padding:         var(--sz--rem-mn);
+                gap:             var(--sz--rm-mn);
+                padding:         var(--sz--rm-mn);
                 margin:          0;
             }
 
@@ -30,7 +30,7 @@
                 white-space: pre-line;
                 min-height:  var(--sz--em-md);
                 min-width:   var(--sz--em-md);
-                padding:     var(--sz--px-md);
+                padding:     var(--sz--px-lg);
                 border:      var(--sz--px-md) solid transparent;
             }
         </style>
@@ -52,23 +52,26 @@
             <div>
                 color: var(--c-acnt-be);
                 background: var(--c-acnt-al);
-                border: var(--sz--px-md) solid var(--c-acnt-ga);
+                border: var(--sz--rm-mn) solid var(--c-acnt-ga);
 
             </div>
             <div>
                 border-radius: var(--br--pp-sm);
+                border: 2px solid var(--c-done-ga);
                 color: var(--c-done-al);
                 background: var(--c-gray-al--a-xl);
 
             </div>
             <div>
                 border-radius: var(--br--px-mx);
+                border: 2px solid var(--c-warn-ga);
                 color: var(--c-warn-al);
                 background: var(--c-gray-al--a-lg);
 
             </div>
             <div>
-                border-radius: var(--br--pp-sm);
+                border-radius: var(--br--pp-md);
+                border: 2px solid var(--c-alrt-ga);
                 color: var(--c-alrt-al);
                 background: var(--c-gray-al--a-md);
 
